@@ -1,0 +1,36 @@
+{
+  "name": "adictonator",
+  "description": "<!--\r **adictonator/adictonator** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adictonator/adictonator.git"
+  },
+  "keywords": [
+    "personal",
+    "resume",
+    "introduction"
+  ],
+  "author": "adictonator",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adictonator/adictonator/issues"
+  },
+  "homepage": "https://github.com/adictonator/adictonator#readme"
+}

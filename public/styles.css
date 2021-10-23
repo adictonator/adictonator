@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'Pixel';
+		src: url('/fonts/font.ttf');
+	}
+
+	:root {
+		--color-white: #fff;
+		--time-animation: 0.6s;
+		--color-text: #000;
+		--color-text-alt: #000;
+		--color-bg: #de5f40;
+		--color-link: #000;
+		--color-link-hover: #000;
+		--color-link-alt: #000;
+		--color-type: #000;
+		--type-line-opacity: 0.05;
+	}
+
+	html {
+		scrollbar-width: none;
+	}
+
+	body {
+		overflow: hidden scroll;
+		-ms-overflow-style: none;
+	}
+
+	body::-webkit-scrollbar {
+		display: none;
+	}
+	header {
+		position: absolute;
+		background-color: pink;
+	}
+	main {
+		height: calc(100vh * 3);
+		position: relative;
+	}
+	  .section-stick .stick {
+		position: relative;
+		background-color: rgba(255, 255, 255, 0.4);
+		transition: all 250ms ease-in-out;
+	  }
+
+	  .section-stick .active {
+		position: absolute;
+		background-color: var(--color-white);
+		box-shadow: 0px 0px 12px 1px var(--color-white);
+		backdrop-filter: blur(3px);
+		-webkit-backdrop-filter: blur(3px);
+	  }
+
+	section {
+		transform: translateY(100vh);
+		transition: all 600ms ease-in-out;
+		/*z-index: 0;*/
+	  }
+
+	section.s1 {
+		transform: translateY(0);
+	}
+
+	.type {
+		position: fixed;
+		height: 100vmax;
+		text-transform: uppercase;
+		width: 100vmax;
+		display: grid;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+		top: 50%;
+		margin-top: -50vmax;
+		will-change: transform;
+	}
+
+	.type__line {
+		white-space: nowrap;
+		font-size: 20vh;
+		font-size: clamp(7rem,18.75vh,15rem);
+		line-height: 0.75;
+		font-weight: bold;
+		font-family: quiche-sans, sans-serif;
+		color: var(--color-type);
+		opacity: var(--type-line-opacity);
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		will-change: transform, opacity;
+	}
+}
