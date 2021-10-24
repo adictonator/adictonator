@@ -7,6 +7,21 @@
 		font-family: 'Pixel';
 		src: url('/fonts/font.ttf');
 	}
+	@font-face {
+		font-family: 'LoveloBlack';
+		src: url('/fonts/Lovelo-Black.woff') format('woff'),
+			 url('/fonts/Lovelo-Black.woff2') format('woff2')
+	}
+	@font-face {
+		font-family: 'LoveloLB';
+		src: url('/fonts/Lovelo-LineBold.woff') format('woff'),
+			 url('/fonts/Lovelo-LineBold.woff2') format('woff2')
+	}
+	@font-face {
+		font-family: 'LoveloLL';
+		src: url('/fonts/Lovelo-LineLight.woff') format('woff'),
+			 url('/fonts/Lovelo-LineLight.woff2') format('woff2')
+	}
 
 	:root {
 		--color-white: #fff;
@@ -33,27 +48,10 @@
 	body::-webkit-scrollbar {
 		display: none;
 	}
-	header {
-		position: absolute;
-		background-color: pink;
-	}
 	main {
 		height: calc(100vh * 3);
 		position: relative;
 	}
-	  .section-stick .stick {
-		position: relative;
-		background-color: rgba(255, 255, 255, 0.4);
-		transition: all 250ms ease-in-out;
-	  }
-
-	  .section-stick .active {
-		position: absolute;
-		background-color: var(--color-white);
-		box-shadow: 0px 0px 12px 1px var(--color-white);
-		backdrop-filter: blur(3px);
-		-webkit-backdrop-filter: blur(3px);
-	  }
 
 	section {
 		transform: translateY(100vh);
@@ -61,9 +59,9 @@
 		/*z-index: 0;*/
 	  }
 
-	section.s1 {
+	/*section.s1 {
 		transform: translateY(0);
-	}
+	}*/
 
 	.type {
 		position: fixed;

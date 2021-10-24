@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Layout from '../components/layout'
 
 export default function Home() {
@@ -7,23 +7,47 @@ export default function Home() {
 	const [ startFlag, setStartFlag ] = useState( true )
 	const [ sectionsQty, setSectionsQty ] = useState( 0 )
 	const [ qty, setQty ] = useState( 1 )
+	const [ sectionsStick, setSectionsStick ] = useState( [] )
 
 	useEffect( () => {
-		const sectionsQtyz = document.querySelectorAll( 'section' ).length
+		const sectionsQtyz = document.querySelectorAll( 'section' )
 
-		setSectionsQty( sectionsQtyz )
-		const sectionStick = document.querySelector( '.section-stick' )
+		setSectionsQty( sectionsQtyz.length )
 
-		// Add child elements in .section-stick as number of sections exist
-		Array( sectionsQty )
-			.fill()
-			.forEach( () => {
-				sectionStick.innerHTML = sectionStick.innerHTML + '<div class="stick w-12 cursor-pointer hover:w-14 h-2 rounded-lg hover:bg-red-50"></div>'
-			} )
+		const f = [ ...sectionsQtyz ].forEach( ( el, i ) => {
+			sectionsStick.push( <StickElm id={ i } /> )
+		} )
 
-		//return sectionStick.innerHTML = ''
-	}, [ sectionsQty ] )
+		console.log('ddd', f);
 
+		setSectionsStick( sectionsStick )
+
+	}, [] )
+
+	const SectionsNav = () => <div className="fixed bottom-5 left-5 flex gap-3 flex-col justify-center z-[1000] section-stick">
+		{/*{ console.log( 'xzc', sectionsStick ) }*/}
+		{ sectionsStick.map( stick => stick ) }
+
+		{/*{
+					[...totalSections].forEach( () => {
+						//console.log( 'xx' );
+						<StickElm />
+					} )
+				}*/}
+
+		{/*{ sectionsStick.map( stick => stick ) }*/ }
+		{/*<StickElm />*/ }
+	</div>
+
+	const StickElm = id => <span className="w-20 h-1 rounded-lg hover:w-28 bg-white bg-opacity-40 hover:bg-red-50 transition-all duration-200 cursor-pointer" onClick={ ( id ) => lol( id ) }></span>
+
+	const lol = some => {
+		console.log(
+			'asdsad', some
+		)
+	}
+
+	const [ fullNameDisplayed, setFullNameDisplayed ] = useState( false )
 	// @todo: Fix this entire logic.
 	useEffect( () => {
 		const TIME_OUT = 600 // It should be the same transition time of the sections
@@ -61,8 +85,9 @@ export default function Home() {
 					}
 
 					// Scroll progressbar
-					const active = document.querySelector( '.section-stick .stick.active' )
-					active.style.top = ( 62 + 30 ) * ( qty - 1 ) + 'px'
+					const active = document.querySelector( '.section-stick span:nth-child(' + qty + ')' )
+					active.classList.add( 'bg-red-500' )
+					//active.style.top = ( 62 + 30 ) * ( qty - 1 ) + 'px'
 				}
 
 				// Wait for the scrolling to finish to reset the values
@@ -80,46 +105,51 @@ export default function Home() {
 		}
 	}, [ initialScroll, startFlag, qty ] )
 
+	const showFullName = e => {
+		if ( !fullNameDisplayed ) {
+			typeSentence( ' Bhaskar Sharma', e.target )
+
+			setFullNameDisplayed( true )
+
+			// maybe change the title tag text too?
+		}
+	}
+
+	function waitForMs( ms ) {
+		return new Promise( resolve => setTimeout( resolve, ms ) )
+	}
+
+	async function typeSentence( sentence, eleRef, delay = 100 ) {
+		const letters = sentence.split( "" )
+		let i = 0
+		while ( i < letters.length ) {
+			await waitForMs( delay )
+			eleRef.innerHTML += letters[ i ]
+			i++
+		}
+		return
+	}
+
 	return (
 		<Layout>
 			<Head>
 				<link rel="stylesheet" href="https://use.typekit.net/cwg6wqv.css" />
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+				<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
 				<title>Good to see you! - adictonator</title>
 			</Head>
 
-			<main className="w-full">
-				<div className="type absolute z-[100]" data-type-transition aria-hidden="true">
-					<div className="type__line">welcome welcome welcome</div>
-					<div className="type__line">debug debug debug</div>
-					<div className="type__line">full stack developer</div>
-					<div className="type__line">php js node php js node</div>
-					<div className="type__line">error error error</div>
-					<div className="type__line">welcome welcome welcome</div>
-					<div className="type__line">debug debug debug</div>
-					<div className="type__line">full stack developer</div>
-					<div className="type__line">php js node php js node</div>
-					<div className="type__line">error error error</div>
-				</div>
+			<main>
+				<SectionsNav />
 
-				<div className="section-stick
-					fixed
-					top-5
-					left-5
-					flex
-					gap-6
-					flex-col
-					justify-center
-					z-[1000]
-				">
-					<div className="stick w-3 h-1 rounded-lg active"></div>
-				</div>
-
-				<section className="bg-blue-500 fixed w-full h-screen p-10 flex flex-col justify-center z-50 text-right s1">
-					<h1 className="text-black text-8xl font-display">Hey! I am Aditya</h1>
-					{/*add some easter eggs maybe? I like them.*/}
-
-					<h3 className="text-4xl">Full stack dev, semi-pro gamer, keen learner.</h3>
-
+				<section className="bg-pb fixed w-full h-screen z-50 s1 translate-y-0">
+					<div className="h-full flex flex-col justify-center p-10 text-center">
+						<h1 className="text-9xl text-brand-red font-lovelo">Hey! I am <br /> <span className="font-lovelo-ll hover:font-lovelo-lb transition-all duration-300 cursor-pointer" title="Want to click it?" onClick={ showFullName }>Aditya</span></h1>
+						<h3 className="mt-10 text-4xl text-powder-blue font-checker">Full stack dev, semi-pro gamer, keen learner.</h3>
+					</div>
+					{/* show my full name on hover or a click maybe? for desktop only i guess */ }
+					{/*add some easter eggs maybe? I like them.*/ }
 				</section>
 
 				<section className="bg-pink-50 s2 z-40">
@@ -165,6 +195,17 @@ export default function Home() {
 					<h2 className="text-7xl">Upcoming projects section maybe</h2>
 					<p>maybe a glimpse of whats coming</p>
 				</section>
+
+				<div className="type absolute z-[100] pointer-events-none" data-type-transition aria-hidden="true">
+					<div className="type__line">welcome welcome welcome</div>
+					<div className="type__line">full stack developer</div>
+					<div className="type__line">php js node php js node</div>
+					<div className="type__line">konnichiwa konnichiwa konnichiwa</div>
+					<div className="type__line">welcome welcome welcome</div>
+					<div className="type__line">full stack developer</div>
+					<div className="type__line">php js node php js node</div>
+					<div className="type__line">konnichiwa konnichiwa konnichiwa</div>
+				</div>
 
 				<footer>
 					&copy; 2021
