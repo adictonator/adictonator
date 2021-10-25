@@ -53,6 +53,10 @@
 		position: relative;
 	}
 
+	.card {
+		@apply fixed w-full h-screen
+	}
+
 	section {
 		transform: translateY(100vh);
 		transition: all 600ms ease-in-out;

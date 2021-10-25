@@ -18,14 +18,14 @@ export default function Home() {
 			sectionsStick.push( <StickElm id={ i } /> )
 		} )
 
-		console.log('ddd', f);
+		console.log( 'ddd', f )
 
 		setSectionsStick( sectionsStick )
 
 	}, [] )
 
 	const SectionsNav = () => <div className="fixed bottom-5 left-5 flex gap-3 flex-col justify-center z-[1000] section-stick">
-		{/*{ console.log( 'xzc', sectionsStick ) }*/}
+		{/*{ console.log( 'xzc', sectionsStick ) }*/ }
 		{ sectionsStick.map( stick => stick ) }
 
 		{/*{
@@ -140,10 +140,10 @@ export default function Home() {
 				<title>Good to see you! - adictonator</title>
 			</Head>
 
-			<main>
+			<main className="bg-pb">
 				<SectionsNav />
 
-				<section className="bg-pb fixed w-full h-screen z-50 s1 translate-y-0">
+				<section className="card z-50 s1 translate-y-0">
 					<div className="h-full flex flex-col justify-center p-10 text-center">
 						<h1 className="text-9xl text-brand-red font-lovelo">Hey! I am <br /> <span className="font-lovelo-ll hover:font-lovelo-lb transition-all duration-300 cursor-pointer" title="Want to click it?" onClick={ showFullName }>Aditya</span></h1>
 						<h3 className="mt-10 text-4xl text-powder-blue font-checker">Full stack dev, semi-pro gamer, keen learner.</h3>
@@ -152,8 +152,24 @@ export default function Home() {
 					{/*add some easter eggs maybe? I like them.*/ }
 				</section>
 
-				<section className="bg-pink-50 s2 z-40">
-					<h2 className="text-7xl">Stacks I use section</h2>
+				{/* Skills section. */ }
+				<section className="card s2 z-40">
+					<h2 className="text-7xl">Technology I work with</h2>
+
+					<div className="flex justify-around">
+						<div className="relative group bg-white flex flex-col items-center px-10 py-2 rounded-lg
+						shadow-xl hover:shadow-2xl
+						after:absolute after:bg-red-100 after:bg-opacity-70
+						after:w-full after:h-full
+						after:top-0
+						after:transition-all after:duration-500
+						after:translate-y-full hover:after:translate-y-[20%]
+						cursor-pointer">
+							<img src="/images/tech/react.svg" alt="ReactJS logo" />
+							<span className="text-3xl uppercase">React</span>
+							<span className="absolute top-0 -right-10 text-2xl group-hover:inline-block">80%</span>
+						</div>
+					</div>
 					<p>I work with JavaScript, PHP, HTML, CSS, PUG, Liquid, Twig, MySQL, NoSQL, MongoDB, Adobe Photoshop, Adobe Illustrator, jQuery, React, Laravel, Vue, WordPress, Figma, Shopify, NextJS, ExpressJS, Node</p>
 
 					Show just the main stack/strong suits first and then more will show all these other techs.
@@ -163,7 +179,7 @@ export default function Home() {
 					</p>
 				</section>
 
-				<section className="bg-yellow-50 s3 z-30">
+				<section className="bg-yellow-50 card s3 z-30">
 					<h2 className="text-7xl">Social section</h2>
 
 					I can be found Tweeting, posting some stuff on Instagram and writing some blogs.
@@ -175,28 +191,28 @@ export default function Home() {
 					maybe linkedin mine, lazycodelab too
 				</section>
 
-				<section className="s4 z-20">
+				<section className="bg-green-100 card s4 z-20">
 					<h2 className="text-7xl">Portfolio Section</h2>
 					<p>mentione some upwork work and what not. some apps to maybe?</p>
 				</section>
 
-				<section className="s5 z-10">
+				<section className="card s5 z-10">
 					<h2 className="text-7xl">About Section</h2>
 					About Me
 					I like to code. I work. Some 2-3 liners and then a CTA with more info about me I guess
 				</section>
 
-				<section className="s6 z-0">
+				<section className="card s6 z-0">
 					<h2 className="text-7xl">Contact Section</h2>
 					<p>contct me brosome</p>
 				</section>
 
-				<section className="s7 z-auto">
+				<section className="card s7 z-auto">
 					<h2 className="text-7xl">Upcoming projects section maybe</h2>
 					<p>maybe a glimpse of whats coming</p>
 				</section>
 
-				<div className="type absolute z-[100] pointer-events-none" data-type-transition aria-hidden="true">
+				<div className="type absolute pointer-events-none" data-type-transition aria-hidden="true">
 					<div className="type__line">welcome welcome welcome</div>
 					<div className="type__line">full stack developer</div>
 					<div className="type__line">php js node php js node</div>

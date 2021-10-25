@@ -1,5 +1,5 @@
-export default function NavBar() {
-	return <nav className="w-24 h-24 bg-pink-600">
+export default function NavBar( { isVisible } ) {
+	return <nav className={ `fixed ${ !isVisible && 'hidden' } w-full h-screen bg-pink-600` }>
 		<a href="#">Toptal</a>
 		<a href="#">Upwork</a>
 	</nav>
