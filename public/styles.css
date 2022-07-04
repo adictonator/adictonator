@@ -10,17 +10,17 @@
 	@font-face {
 		font-family: 'LoveloBlack';
 		src: url('/fonts/Lovelo-Black.woff') format('woff'),
-			 url('/fonts/Lovelo-Black.woff2') format('woff2')
+			url('/fonts/Lovelo-Black.woff2') format('woff2');
 	}
 	@font-face {
 		font-family: 'LoveloLB';
 		src: url('/fonts/Lovelo-LineBold.woff') format('woff'),
-			 url('/fonts/Lovelo-LineBold.woff2') format('woff2')
+			url('/fonts/Lovelo-LineBold.woff2') format('woff2');
 	}
 	@font-face {
 		font-family: 'LoveloLL';
 		src: url('/fonts/Lovelo-LineLight.woff') format('woff'),
-			 url('/fonts/Lovelo-LineLight.woff2') format('woff2')
+			url('/fonts/Lovelo-LineLight.woff2') format('woff2');
 	}
 
 	:root {
@@ -48,24 +48,6 @@
 	body::-webkit-scrollbar {
 		display: none;
 	}
-	main {
-		height: calc(100vh * 3);
-		position: relative;
-	}
-
-	.card {
-		@apply fixed w-full h-screen
-	}
-
-	section {
-		transform: translateY(100vh);
-		transition: all 600ms ease-in-out;
-		/*z-index: 0;*/
-	  }
-
-	/*section.s1 {
-		transform: translateY(0);
-	}*/
 
 	.type {
 		position: fixed;
@@ -84,7 +66,7 @@
 	.type__line {
 		white-space: nowrap;
 		font-size: 20vh;
-		font-size: clamp(7rem,18.75vh,15rem);
+		font-size: clamp(7rem, 18.75vh, 15rem);
 		line-height: 0.75;
 		font-weight: bold;
 		font-family: quiche-sans, sans-serif;
