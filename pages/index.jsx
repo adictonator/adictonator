@@ -1,139 +1,32 @@
+import anime from 'animejs'
 import Head from 'next/head'
 import { useCallback, useEffect, useState } from 'react'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
+import ContactMe from '../components/Sections/ContactMe'
+import Hero from '../components/Sections/Hero'
+import Portfolio from '../components/Sections/Portfolio'
+import Skills from '../components/Sections/Skills'
 
 export default function Home() {
-	const [initialScroll, setInitialScroll] = useState(0)
-	const [startFlag, setStartFlag] = useState(true)
-	const [sectionsQty, setSectionsQty] = useState(0)
-	const [qty, setQty] = useState(1)
-	const [sectionsStick, setSectionsStick] = useState([])
+	const showCard = (e) => {
+		document.getElementById(
+			'skills'
+		).style.transform = `translateX(500px) translateY(100%)`
 
-	useEffect(() => {
-		const sectionsQtyz = document.querySelectorAll('section')
-
-		setSectionsQty(sectionsQtyz.length)
-
-		const f = [...sectionsQtyz].forEach((el, i) => {
-			sectionsStick.push(<StickElm id={i} />)
+		anime({
+			targets: 'section#skills',
+			easing: 'easeOutElastic',
+			elasticity: 250,
+			duration: 800,
+			zIndex: 51,
+			translateY: 0,
+			translateX: 0,
+			//opacity: 1,
+			begin: function (anim) {
+				anim.animatables[0].target.classList.remove('hidden')
+				//anim.animatables[0].target.classList.add('absolute')
+			},
 		})
-
-		console.log('ddd', f)
-
-		setSectionsStick(sectionsStick)
-	}, [])
-
-	const SectionsNav = () => (
-		<div className="fixed bottom-5 left-5 flex gap-3 flex-col justify-center z-[1000] section-stick">
-			{/*{ console.log( 'xzc', sectionsStick ) }*/}
-			{sectionsStick.map((stick) => stick)}
-
-			{/*{
-					[...totalSections].forEach( () => {
-						//console.log( 'xx' );
-						<StickElm />
-					} )
-				}*/}
-
-			{/*{ sectionsStick.map( stick => stick ) }*/}
-			{/*<StickElm />*/}
-		</div>
-	)
-
-	const StickElm = (id) => (
-		<span
-			className="w-20 h-1 rounded-lg hover:w-28 bg-white bg-opacity-40 hover:bg-red-50 transition-all duration-200 cursor-pointer"
-			onClick={(id) => lol(id)}
-		></span>
-	)
-
-	const lol = (some) => {
-		console.log('asdsad', some)
-	}
-
-	const [fullNameDisplayed, setFullNameDisplayed] = useState(false)
-	// @todo: Fix this entire logic.
-	useEffect(() => {
-		const TIME_OUT = 600 // It should be the same transition time of the sections
-		const body = document.querySelector('body')
-
-		let mainn = null,
-			nextn = null
-
-		// Listening to scroll event
-		window.onscroll = () => {
-			if (startFlag) {
-				const scrollDown = window.scrollY >= initialScroll
-				const scrollLimit = qty >= 1 && qty <= sectionsQty
-
-				// Verify that the scroll does not exceed the number of sections
-				if (scrollLimit) {
-					body.style.overflowY = 'hidden' // Lock el scroll
-
-					if (scrollDown && qty < sectionsQty) {
-						mainn = document.querySelector(`section.s${qty}`)
-						nextn = document.querySelector(`section.s${qty + 1}`)
-
-						mainn.style.transform = 'translateY(-100vh)'
-						nextn.style.transform = 'translateY(0)'
-
-						setQty((qty) => qty + 1)
-					} else if (!scrollDown && qty > 1) {
-						mainn = document.querySelector(`section.s${qty - 1}`)
-						nextn = document.querySelector(`section.s${qty}`)
-
-						mainn.style.transform = 'translateY(0)'
-						nextn.style.transform = 'translateY(100vh)'
-
-						setQty((qty) => qty - 1)
-					}
-
-					// Scroll progressbar
-					const active = document.querySelector(
-						'.section-stick span:nth-child(' + qty + ')'
-					)
-					active.classList.add('bg-red-500')
-					//active.style.top = ( 62 + 30 ) * ( qty - 1 ) + 'px'
-				}
-
-				// Wait for the scrolling to finish to reset the values
-				setTimeout(() => {
-					setInitialScroll(window.scrollY)
-					setStartFlag(true)
-					body.style.overflowY = 'scroll' // Unlock scroll
-				}, TIME_OUT)
-
-				setStartFlag(false)
-			}
-
-			// Keep scrollbar in the middle of the viewport
-			window.scroll(0, window.screen.height)
-		}
-	}, [initialScroll, startFlag, qty])
-
-	const showFullName = (e) => {
-		if (!fullNameDisplayed) {
-			typeSentence(' Bhaskar Sharma', e.target)
-
-			setFullNameDisplayed(true)
-
-			// maybe change the title tag text too?
-		}
-	}
-
-	function waitForMs(ms) {
-		return new Promise((resolve) => setTimeout(resolve, ms))
-	}
-
-	async function typeSentence(sentence, eleRef, delay = 100) {
-		const letters = sentence.split('')
-		let i = 0
-		while (i < letters.length) {
-			await waitForMs(delay)
-			eleRef.innerHTML += letters[i]
-			i++
-		}
-		return
 	}
 
 	return (
@@ -147,7 +40,7 @@ export default function Home() {
 				<link
 					rel="preconnect"
 					href="https://fonts.gstatic.com"
-					crossOrigin
+					crossOrigin={'crossOrigin'}
 				/>
 				<link
 					href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;1,400&display=swap"
@@ -155,124 +48,36 @@ export default function Home() {
 				/>
 				<title>Good to see you! - adictonator</title>
 			</Head>
+			{/*<SectionsNav />*/}
+			<Hero />
+			<h2
+				className="absolute bottom-28 z-50"
+				onClick={(e) => showCard(e)}
+			>
+				Maybe chcek heresss
+			</h2>
+			<Skills />
+			{/*<Portfolio />
+			<ContactMe />*/}
 
-			<main className="bg-pb">
-				<SectionsNav />
-
-				<section className="card z-50 s1 translate-y-0">
-					<div className="h-full flex flex-col justify-center p-10 text-center">
-						<h1 className="text-9xl text-brand-red font-lovelo">
-							Hey! I am <br />{' '}
-							<span
-								className="font-lovelo-ll hover:font-lovelo-lb transition-all duration-300 cursor-pointer"
-								title="Want to click it?"
-								onClick={showFullName}
-							>
-								Aditya
-							</span>
-						</h1>
-						<h3 className="mt-10 text-4xl text-powder-blue font-checker">
-							Full stack dev, semi-pro gamer, keen learner.
-						</h3>
-					</div>
-					{/* show my full name on hover or a click maybe? for desktop only i guess */}
-					{/*add some easter eggs maybe? I like them.*/}
-				</section>
-
-				{/* Skills section. */}
-				<section className="card s2 z-40">
-					<h2 className="text-7xl">Technology I work with</h2>
-					<div className="flex justify-around">
-						<div
-							className="relative group bg-white flex flex-col items-center px-10 py-2 rounded-lg
-						shadow-xl hover:shadow-2xl
-						after:absolute after:bg-red-100 after:bg-opacity-70
-						after:w-full after:h-full
-						after:top-0
-						after:transition-all after:duration-500
-						after:translate-y-full hover:after:translate-y-[20%]
-						cursor-pointer"
-						>
-							<img
-								src="/images/tech/react.svg"
-								alt="ReactJS logo"
-							/>
-							<span className="text-3xl uppercase">React</span>
-							<span className="absolute top-0 -right-10 text-2xl group-hover:inline-block">
-								80%
-							</span>
-						</div>
-					</div>
-					<p>
-						I work with JavaScript, PHP, HTML, CSS, PUG, Liquid,
-						Twig, MySQL, NoSQL, MongoDB, Adobe Photoshop, Adobe
-						Illustrator, jQuery, React, Laravel, Vue, WordPress,
-						Figma, Shopify, NextJS, ExpressJS, Node
-					</p>
-					Show just the main stack/strong suits first and then more
-					will show all these other techs.
-					<p>
-						Experimenting with <br />
-						some things I am Experimenting with like C++, Unreal
-						Engine etc, Godot
-					</p>
-				</section>
-
-				<section className="bg-yellow-50 card s3 z-30">
-					<h2 className="text-7xl">Social section</h2>I can be found
-					Tweeting, posting some stuff on Instagram and writing some
-					blogs. twitter mine and lazycodelab too, instagram mine,
-					lazycodelab too, gitub mine youtube lazycodelab maybe
-					linkedin mine, lazycodelab too
-				</section>
-
-				<section className="bg-green-100 card s4 z-20">
-					<h2 className="text-7xl">Portfolio Section</h2>
-					<p>
-						mentione some upwork work and what not. some apps to
-						maybe?
-					</p>
-				</section>
-
-				<section className="card s5 z-10">
-					<h2 className="text-7xl">About Section</h2>
-					About Me I like to code. I work. Some 2-3 liners and then a
-					CTA with more info about me I guess
-				</section>
-
-				<section className="card s6 z-0">
-					<h2 className="text-7xl">Contact Section</h2>
-					<p>contct me brosome</p>
-				</section>
-
-				<section className="card s7 z-auto">
-					<h2 className="text-7xl">
-						Upcoming projects section maybe
-					</h2>
-					<p>maybe a glimpse of whats coming</p>
-				</section>
-
-				<div
-					className="type absolute pointer-events-none"
-					data-type-transition
-					aria-hidden="true"
-				>
-					<div className="type__line">welcome welcome welcome</div>
-					<div className="type__line">full stack developer</div>
-					<div className="type__line">php js node php js node</div>
-					<div className="type__line">
-						konnichiwa konnichiwa konnichiwa
-					</div>
-					<div className="type__line">welcome welcome welcome</div>
-					<div className="type__line">full stack developer</div>
-					<div className="type__line">php js node php js node</div>
-					<div className="type__line">
-						konnichiwa konnichiwa konnichiwa
-					</div>
+			{/*<div
+				className="type pointer-events-none absolute z-0"
+				data-type-transition
+				aria-hidden="true"
+			>
+				<div className="type__line">welcome welcome welcome</div>
+				<div className="type__line">full stack developer</div>
+				<div className="type__line">php js node php js node</div>
+				<div className="type__line">
+					konnichiwa konnichiwa konnichiwa
 				</div>
-
-				<footer>&copy; 2021</footer>
-			</main>
+				<div className="type__line">welcome welcome welcome</div>
+				<div className="type__line">full stack developer</div>
+				<div className="type__line">php js node php js node</div>
+				<div className="type__line">
+					konnichiwa konnichiwa konnichiwa
+				</div>
+			</div>*/}
 		</Layout>
 	)
 }
