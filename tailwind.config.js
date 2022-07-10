@@ -1,5 +1,5 @@
 module.exports = {
-	purge: [
+	content: [
 		'./pages/**/*.{js,ts,jsx,tsx}',
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
@@ -29,20 +29,17 @@ module.exports = {
 			textColor: {
 				'brand-red': '#E63946',
 				'powder-blue': '#A8DADC',
+				maroon: '#AC3B61',
+				biege: '#BAB2B5',
 			},
 			backgroundColor: {
+				'indigo-dye': '#123C69',
 				pb: '#1d3557',
 			},
 			backgroundImage: {
 				primary: "url('/images/bg.svg')",
 				me: "url('/images/me.jpg')",
 			},
-		},
-	},
-	variants: {
-		extend: {
-			display: ['group-hover'],
-			fontFamily: ['hover'],
 		},
 	},
 	plugins: [],
