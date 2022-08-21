@@ -60,7 +60,7 @@ export default function Home() {
 			{/*<Portfolio />
 			<ContactMe />*/}
 
-			{/*<div
+			<div
 				className="type pointer-events-none absolute z-0"
 				data-type-transition
 				aria-hidden="true"
@@ -77,7 +77,7 @@ export default function Home() {
 				<div className="type__line">
 					konnichiwa konnichiwa konnichiwa
 				</div>
-			</div>*/}
+			</div>
 		</Layout>
 	)
 }

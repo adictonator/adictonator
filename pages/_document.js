@@ -7,11 +7,10 @@ export default class MyDocument extends Document {
 				<Head />
 				<body
 					className="
-					overflow-x-hidden
-					bg-dark-corn-blue
-					bg-body
 					font-text
 					text-almond-white
+					overflow-x-hidden
+					bg-indigo-dye
 					antialiased
 					selection:bg-indigo-400
 					selection:text-purple-900"

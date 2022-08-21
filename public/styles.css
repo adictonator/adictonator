@@ -80,3 +80,7 @@
 		will-change: transform, opacity;
 	}
 }
+
+/*#ok {
+	animation-play-state: paused;
+}*/

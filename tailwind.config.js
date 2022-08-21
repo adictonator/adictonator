@@ -26,6 +26,9 @@ module.exports = {
 					},
 				},
 			},
+			colors: {
+				lol: '#123C69',
+			},
 			textColor: {
 				'brand-red': '#E63946',
 				'powder-blue': '#A8DADC',

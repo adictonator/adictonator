@@ -1,9 +1,14 @@
+import Footer from './Footer'
 import Header from './Header'
-import styles from './layout.module.css'
 
-export default function Layout( { children } ) {
-	return <div className="relative">
-		<Header />
-		{ children }
-	</div>
+export default function Layout({ children }) {
+	return (
+		<>
+			{/*<Header />*/}
+			<main className="flex min-h-screen w-full flex-col">
+				{children}
+			</main>
+			{/*<Footer />*/}
+		</>
+	)
 }
