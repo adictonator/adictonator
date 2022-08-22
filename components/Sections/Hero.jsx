@@ -29,11 +29,11 @@ export default function Hero() {
 	}
 
 	return (
-		<section className="z-50 flex h-screen min-h-full flex-col justify-center p-10 text-center">
-			<h1 className="font-lovelo text-9xl text-maroon drop-shadow-xl">
+		<section className="z-50 flex h-screen min-h-full flex-col justify-center p-5 text-center md:p-10">
+			<h1 className="font-lovelo text-6xl text-maroon drop-shadow-xl md:text-9xl">
 				Oh, no! <br /> You caught me.
 			</h1>
-			<span className="text-2xl text-biege">
+			<span className="mt-4 text-lg text-biege md:text-2xl">
 				I am still working on some stuff currently.
 				<br />
 				Maybe come back later and I might just have something ready to
