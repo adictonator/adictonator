@@ -1,35 +1,15 @@
 import React from 'react'
-import anime from 'animejs'
 import Head from 'next/head'
 import { useCallback, useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import ContactMe from '../components/Sections/ContactMe'
 import Hero from '../components/Sections/Hero'
 import Portfolio from '../components/Sections/Portfolio'
-import Skills from '../components/Sections/Skills'
+import SkillsSection from '../components/Sections/SkillsSection'
+import AboutSection from '../components/Sections/AboutSection'
+import Footer from '../components/Footer'
 
 export default function Home() {
-	const showCard = (e) => {
-		document.getElementById(
-			'skills'
-		).style.transform = `translateX(500px) translateY(100%)`
-
-		anime({
-			targets: 'section#skills',
-			easing: 'easeOutElastic',
-			elasticity: 250,
-			duration: 800,
-			zIndex: 51,
-			translateY: 0,
-			translateX: 0,
-			//opacity: 1,
-			begin: function (anim) {
-				anim.animatables[0].target.classList.remove('hidden')
-				//anim.animatables[0].target.classList.add('absolute')
-			},
-		})
-	}
-
 	return (
 		<Layout>
 			<Head>
@@ -37,15 +17,11 @@ export default function Home() {
 			</Head>
 			{/*<SectionsNav />*/}
 			<Hero />
-			<h2
-				className="absolute bottom-28 z-50"
-				onClick={(e) => showCard(e)}
-			>
-				Maybe chcek heresss
-			</h2>
-			<Skills />
-			{/*<Portfolio />
-			<ContactMe />*/}
+			<SkillsSection />
+			<Portfolio />
+			<AboutSection />
+			<ContactMe />
+			<Footer />
 
 			<div
 				className="type pointer-events-none absolute z-0"

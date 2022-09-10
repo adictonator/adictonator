@@ -71,7 +71,7 @@ export default function Hero() {
 					Aditya
 				</span>
 			</h1>
-			<h3 className="mt-10 font-checker text-4xl text-powder-blue">
+			<h3 className="mt-10 font-checker text-4xl text-linen">
 				Full stack dev, semi-pro gamer, keen learner.
 			</h3>
 			{/* show my full name on hover or a click maybe? for desktop only i guess */}
