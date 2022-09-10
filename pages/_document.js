@@ -7,10 +7,6 @@ export default class MyDocument extends Document {
 			<Html lang="en">
 				<Head>
 					<link
-						rel="stylesheet"
-						href="https://use.typekit.net/cwg6wqv.css"
-					/>
-					<link
 						rel="preconnect"
 						href="https://fonts.googleapis.com"
 					/>
@@ -22,6 +18,13 @@ export default class MyDocument extends Document {
 					<link
 						href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;1,400&display=swap"
 						rel="stylesheet"
+					/>
+					<link
+						rel="stylesheet"
+						href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css"
+						integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA=="
+						crossOrigin="anonymous"
+						referrerPolicy="no-referrer"
 					/>
 				</Head>
 				<body
