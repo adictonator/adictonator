@@ -35,7 +35,7 @@ export default function SkillsSection() {
 
 	const SkillComp = ({ skillList, cats }) => (
 		<div>
-			<h4 className="mb-4 font-lovelo-ll text-5xl text-indigo-dye underline decoration-double decoration-1 underline-offset-8 drop-shadow-md">
+			<h4 className="mb-4 block border-b border-dashed border-indigo-dye font-lovelo-ll text-5xl text-indigo-dye drop-shadow-md">
 				{cats}
 			</h4>
 			<div className="grid grid-cols-4 gap-3">
@@ -47,9 +47,9 @@ export default function SkillsSection() {
 	)
 
 	return (
-		<section id="skills" className="bg-linen py-10">
+		<section id="skills" className="bg-linen py-20">
 			<div className="container mx-auto">
-				<h2 className="mt-16 mb-10 text-center font-lovelo text-7xl text-maroon underline decoration-wavy decoration-2 underline-offset-8 drop-shadow-md">
+				<h2 className="mb-10 text-center font-lovelo text-7xl text-maroon underline decoration-wavy decoration-2 underline-offset-8 drop-shadow-md">
 					My Tech Expertise
 				</h2>
 
