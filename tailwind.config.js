@@ -3,7 +3,7 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			checker: ["'Josefin Sans', sans-serif"],
-			lovelo: ['LoveloBlack, sans-serif'],
+			lovelo: ['var(--font-lovelo-bold)'],
 			'lovelo-lb': ['LoveloLB, sans-serif'],
 			'lovelo-ll': ['LoveloLL, sans-serif'],
 			'fira-code': ['var(--font-fira)'],
