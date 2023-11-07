@@ -1,15 +1,12 @@
 module.exports = {
-	content: [
-		'./pages/**/*.{js,ts,jsx,tsx}',
-		'./components/**/*.{js,ts,jsx,tsx}',
-	],
+	content: ['./app/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
 	theme: {
 		fontFamily: {
 			checker: ["'Josefin Sans', sans-serif"],
 			lovelo: ['LoveloBlack, sans-serif'],
 			'lovelo-lb': ['LoveloLB, sans-serif'],
 			'lovelo-ll': ['LoveloLL, sans-serif'],
-			'fira-code': ['Fira Code Retina, monospace'],
+			'fira-code': ['var(--font-fira)'],
 		},
 		extend: {
 			animation: {
@@ -26,5 +23,4 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
 }
