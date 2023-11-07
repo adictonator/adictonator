@@ -4,7 +4,7 @@ import anime from 'animejs'
 export default function Hero() {
 	const [fullNameDisplayed, setFullNameDisplayed] = useState(false)
 
-	const dummy = (e) => {
+	const dummy = e => {
 		anime({
 			targets: e.target,
 			easing: 'easeOutCubic',
@@ -33,7 +33,7 @@ export default function Hero() {
 		//document.getElementById('skills')?.classList.add('z-50')
 	}
 
-	const showFullName = (e) => {
+	const showFullName = e => {
 		if (!fullNameDisplayed) {
 			typeSentence(' Bhaskar Sharma', e.target)
 
@@ -55,7 +55,7 @@ export default function Hero() {
 	}
 
 	function waitForMs(ms) {
-		return new Promise((resolve) => setTimeout(resolve, ms))
+		return new Promise(resolve => setTimeout(resolve, ms))
 	}
 
 	return (
@@ -66,8 +66,7 @@ export default function Hero() {
 				<span
 					className="cursor-pointer font-lovelo-lb transition-all duration-300"
 					title="Want to click it?"
-					onClick={showFullName}
-				>
+					onClick={showFullName}>
 					Aditya
 				</span>
 			</h1>
@@ -77,7 +76,7 @@ export default function Hero() {
 			{/* show my full name on hover or a click maybe? for desktop only i guess */}
 			{/*add some easter eggs maybe? I like them.*/}
 			{/* A link to the next section */}
-			<a className="" onClick={(e) => dummy(e)}>
+			<a className="" onClick={e => dummy(e)}>
 				See What I Can Do
 			</a>
 		</section>

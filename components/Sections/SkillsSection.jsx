@@ -21,8 +21,7 @@ export default function SkillsSection() {
 					<div className="relative h-3.5 overflow-hidden rounded bg-linen">
 						<div
 							className="absolute inset-0 w-5 bg-maroon"
-							style={{ width: skill.level + '%' }}
-						></div>
+							style={{ width: skill.level + '%' }}></div>
 					</div>
 				</div>
 				<span className="z-0 mt-5 flex items-start font-fira-code text-6xl text-linen/30 duration-300 group-hover:text-linen/50">

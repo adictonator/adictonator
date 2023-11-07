@@ -1,9 +1,4 @@
-import {
-	EB_Garamond,
-	Fira_Code,
-	Josefin_Sans,
-	Source_Sans_3,
-} from 'next/font/google'
+import { Fira_Code, Josefin_Sans } from 'next/font/google'
 import 'tailwindcss/tailwind.css'
 import React from 'react'
 import { Analytics } from '@vercel/analytics/react'
@@ -41,25 +36,6 @@ const firaCode = Fira_Code({
 export default ({ children }) => {
 	return (
 		<html lang="en">
-			<head>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link
-					rel="preconnect"
-					href="https://fonts.gstatic.com"
-					crossOrigin={'crossOrigin'}
-				/>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;1,400&display=swap"
-					rel="stylesheet"
-				/>
-				<link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css"
-					integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA=="
-					crossOrigin="anonymous"
-					referrerPolicy="no-referrer"
-				/>
-			</head>
 			<body
 				className={`${josefin.variable} ${firaCode.variable} relative`}>
 				<main>{children}</main>

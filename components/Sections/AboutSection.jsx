@@ -21,8 +21,8 @@ export default function AboutSection() {
 					custom football kit for my custom football club in{' '}
 					<abbr title="Pro Evolution Soccer 2006">PES 06</abbr> to my
 					own operating system. But I soon realized that an operating
-					system can't be coded with just HTML and VBScript knowledge.
-					So, I transitioned to creating my own website(s).
+					system can&apos;t be coded with just HTML and VBScript
+					knowledge. So, I transitioned to creating my own website(s).
 				</p>
 				<p className="mt-5 font-checker text-2xl text-maroon">
 					I have done B.E in Civil Engineering from Chandigarh
@@ -35,8 +35,7 @@ export default function AboutSection() {
 						href="https://www.upwork.com/freelancers/~010a966ef818c7894a"
 						target={'_blank'}
 						rel={'noreferrer'}
-						className="border-b-2 border-indigo-dye/30 text-indigo-dye/90 duration-300 hover:border-indigo-dye hover:text-indigo-dye"
-					>
+						className="border-b-2 border-indigo-dye/30 text-indigo-dye/90 duration-300 hover:border-indigo-dye hover:text-indigo-dye">
 						Upwork profile
 					</a>
 					.
