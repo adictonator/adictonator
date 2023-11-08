@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import ContactMe from '../components/Sections/ContactMe'
 import Hero from '../components/Sections/Hero'
 import Portfolio from '../components/Sections/Portfolio'

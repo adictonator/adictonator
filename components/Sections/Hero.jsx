@@ -60,14 +60,14 @@ export default function Hero() {
 
 	return (
 		<section className="z-50 flex h-screen min-h-full flex-col justify-center p-10 text-center">
-			<h1 className="font-lovelo text-9xl text-maroon drop-shadow-xl">
-				Hey! I am
+			<h1 className="font-pixel text-9xl text-maroon drop-shadow-xl">
+				Full-Stack Developer
 				<br />
 				<span
 					className="cursor-pointer font-lovelo-lb transition-all duration-300"
 					title="Want to click it?"
 					onClick={showFullName}>
-					Aditya
+					& semi-pro gamer
 				</span>
 			</h1>
 			<h3 className="mt-10 font-checker text-4xl text-linen">
