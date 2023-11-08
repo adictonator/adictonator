@@ -2,10 +2,9 @@ module.exports = {
 	content: ['./app/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
 	theme: {
 		fontFamily: {
-			checker: ["'Josefin Sans', sans-serif"],
-			lovelo: ['var(--font-lovelo-bold)'],
-			'lovelo-lb': ['LoveloLB, sans-serif'],
-			'lovelo-ll': ['LoveloLL, sans-serif'],
+			pixel: ['var(--font-pixel)'],
+			lovelo: ['var(--font-lovelo)'],
+			'lovelo-line': ['var(--font-lovelo-line)'],
 			'fira-code': ['var(--font-fira)'],
 		},
 		extend: {
