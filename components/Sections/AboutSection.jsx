@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function AboutSection() {
 	return (
-		<section className="bg-linen py-20">
+		<section className="bg-linen py-20 min-w-full">
 			<div className="container mx-auto max-w-5xl">
 				<h2 className="mb-10 text-center font-lovelo text-7xl text-indigo-dye underline decoration-wavy decoration-2 underline-offset-8 drop-shadow-md">
 					Who am I?

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ContactMe() {
 	return (
-		<section className="bg-indigo-dye py-10">
+		<section className="bg-indigo-dye py-10 min-w-full">
 			<div className="container mx-auto">
 				<h2 className="mt-16 mb-10 text-center font-lovelo text-7xl text-linen underline decoration-wavy decoration-2 underline-offset-8 drop-shadow-md">
 					{"Let's Connect"}

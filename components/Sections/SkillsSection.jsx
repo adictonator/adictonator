@@ -46,8 +46,8 @@ export default function SkillsSection() {
 	)
 
 	return (
-		<section id="skills" className="bg-linen py-20">
-			<div className="container mx-auto">
+		<section id="skills" className="bg-linen py-20 w-full min-w-[4000px]">
+			<div className="mx-auto">
 				<h2 className="mb-10 text-center font-lovelo text-7xl text-maroon underline decoration-wavy decoration-2 underline-offset-8 drop-shadow-md">
 					My Tech Expertise
 				</h2>
@@ -59,7 +59,7 @@ export default function SkillsSection() {
 					have worked with.
 				</p>
 
-				<div className="divide-powder-blue mt-16 space-y-20">
+				<div className="divide-powder-blue flex mt-16 space-y-20">
 					{Object.keys(Skills).map((skillCat, idx) => (
 						<SkillComp
 							skillList={Skills[skillCat]}

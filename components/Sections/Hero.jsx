@@ -59,7 +59,7 @@ export default function Hero() {
 	}
 
 	return (
-		<section className="z-50 flex h-screen min-h-full flex-col justify-center p-10 text-center">
+		<section className="z-50 flex h-screen min-h-full flex-col justify-center min-w-full w-full p-10 text-center">
 			<h1 className="font-pixel text-9xl text-maroon drop-shadow-xl">
 				Full-Stack Developer
 				<br />

@@ -51,8 +51,8 @@ export default ({ children }) => {
 	return (
 		<html lang="en">
 			<body
-				className={`${josefin.variable} ${firaCode.variable} ${loveloLine.variable} ${lovelo.variable} ${pixel.variable} relative`}>
-				<main>{children}</main>
+				className={`${josefin.variable} ${firaCode.variable} ${loveloLine.variable} ${lovelo.variable} ${pixel.variable} relative overflow-y-hidden overflow-x-scroll`}>
+				<main className="flex">{children}</main>
 				<Analytics />
 			</body>
 		</html>
