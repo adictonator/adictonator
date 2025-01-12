@@ -1,50 +1,38 @@
 {
-	"name": "adictonator",
-	"description": "<!--\r **adictonator/adictonator** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
-	"version": "1.0.0",
-	"main": "index.js",
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"dependencies": {
-		"@vercel/analytics": "^1.1.1",
-		"animejs": "^3.2.1",
-		"next": "^14.0.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
-		"@babel/eslint-parser": "^7.22.15",
-		"@next/eslint-plugin-next": "^14.0.1",
-		"@tailwindcss/forms": "^0.5.6",
-		"autoprefixer": "^10.4.16",
-		"babel-eslint": "^10.1.0",
-		"eslint": "8.53.0",
-		"eslint-config-next": "14.0.1",
-		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-prettier": "^5.0.1",
-		"eslint-plugin-react": "^7.33.2",
-		"postcss": "^8.4.31",
-		"prettier": "^3.0.3",
-		"prettier-plugin-tailwindcss": "^0.5.6",
-		"tailwindcss": "^3.3.5"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/adictonator/adictonator.git"
-	},
-	"keywords": [
-		"personal",
-		"resume",
-		"introduction"
-	],
-	"author": "adictonator",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/adictonator/adictonator/issues"
-	},
-	"homepage": "https://github.com/adictonator/adictonator#readme"
+  "name": "hstl.pro",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.1.4",
+    "@radix-ui/react-slot": "^1.1.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.471.0",
+    "next": "15.1.4",
+    "next-themes": "^0.4.4",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-icons": "^5.4.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5",
+    "@types/react": "19.0.5",
+    "@types/react-dom": "19.0.3",
+    "autoprefixer": "10.4.20",
+    "eslint": "9.18.0",
+    "eslint-config-next": "15.1.4",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.7.3",
+    "tsx": "^4.19.2"
+  }
 }

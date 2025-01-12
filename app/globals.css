@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 60 6% 96%; /* Cool Beige */
+		--foreground: 0 0% 43%; /* Slate Gray */
+
+		--card: 60 7% 88%; /* Pale Gray */
+		--card-foreground: 0 0% 43%; /* Slate Gray */
+
+		--popover: 60 7% 88%; /* Pale Gray */
+		--popover-foreground: 0 0% 43%; /* Slate Gray */
+
+		--primary: 60 6% 96%; /* Cool Beige */
+		--primary-foreground: 0 0% 43%; /* Slate Gray */
+
+		--secondary: 0 0% 72%; /* Muted Steel */
+		--secondary-foreground: 0 0% 43%; /* Slate Gray */
+
+		--muted: 60 7% 88%; /* Pale Gray */
+		--muted-foreground: 0 0% 43%; /* Slate Gray */
+
+		--accent: 216 91% 59%; /* Bright Blue */
+		--accent-foreground: 60 6% 96%; /* Cool Beige */
+
+		--accent-hover: 216 85% 53%; /* Soft Hover Blue */
+
+		--destructive: 0 62.8% 60.2%; /* Muted Red */
+		--destructive-foreground: 60 6% 96%; /* Cool Beige */
+
+		--border: 0 0% 72%; /* Muted Steel */
+		--input: 0 0% 72%; /* Muted Steel */
+		--ring: 216 91% 59%; /* Bright Blue */
+
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: 0 0% 20%; /* Dark Charcoal */
+		--foreground: 60 6% 96%; /* Cool Beige */
+
+		--card: 0 0% 25%; /* Slightly lighter charcoal */
+		--card-foreground: 60 6% 96%; /* Cool Beige */
+
+		--popover: 0 0% 25%; /* Slightly lighter charcoal */
+		--popover-foreground: 60 6% 96%; /* Cool Beige */
+
+		--primary: 0 0% 20%; /* Dark Charcoal */
+		--primary-foreground: 60 6% 96%; /* Cool Beige */
+
+		--secondary: 0 0% 72%; /* Muted Steel */
+		--secondary-foreground: 60 6% 96%; /* Cool Beige */
+
+		--muted: 0 0% 25%; /* Slightly lighter charcoal */
+		--muted-foreground: 60 6% 96%; /* Cool Beige */
+
+		--accent: 216 91% 59%; /* Bright Blue */
+		--accent-foreground: 0 0% 20%; /* Dark Charcoal */
+
+		--accent-hover: 216 76% 75%; /* Light Steel Blue */
+
+		--destructive: 0 40% 30%; /* Dark Muted Red */
+		--destructive-foreground: 60 6% 96%; /* Cool Beige */
+
+		--border: 0 0% 25%; /* Slightly lighter charcoal */
+		--input: 0 0% 25%; /* Slightly lighter charcoal */
+		--ring: 216 91% 59%; /* Bright Blue */
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+}
+
+@layer utilities {
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.animate-gradient {
+	background-size: 200% auto;
+	animation: gradient 8s linear infinite;
+}
